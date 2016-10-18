@@ -11,37 +11,14 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.js', '.ts']
+        extensions: ['', '.ts','.js']
     },
 
     module: {
-        preLoaders: [
-            {
-                test: /\.ts$/,
-                loader: 'string-replace-loader',
-                query: {
-                    search: '(System|SystemJS)(.*[\\n\\r]\\s*\\.|\\.)import\\((.+)\\)',
-                    replace: '$1.import($3).then(mod => (mod.__esModule && mod.default) ? mod.default : mod)',
-                    flags: 'g'
-                },
-                include: [helpers.root('src')]
-            },
-            {
-                test: /\.js$/,
-                loader: 'string-replace-loader',
-                query: {
-                    search: '(System|SystemJS)(.*[\\n\\r]\\s*\\.|\\.)import\\((.+)\\)',
-                    replace: '$1.import($3).then(mod => (mod.__esModule && mod.default) ? mod.default : mod)',
-                    flags: 'g'
-                },
-                include: [helpers.root('src')]
-            }
-
-        ],
         loaders: [
             {
                 test: /\.ts$/,
-                loaders: ['ts-loader','angular2-router-loader?loader=require', 'angular2-template-loader']
+                loaders: ['ts-loader', 'angular2-template-loader']
             },
             {
                 test: /\.html$/,
@@ -68,7 +45,6 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
         }),
-
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         })
