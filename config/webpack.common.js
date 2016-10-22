@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+const path = require('path');
 
 module.exports = {
     entry: {
@@ -11,14 +12,14 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.ts','.js']
+        extensions: ['.ts','.js']
     },
-
+    // context: path.resolve(__dirname, '../src/'),
     module: {
         loaders: [
             {
                 test: /\.ts$/,
-                loaders: ['ts-loader', 'angular2-template-loader']
+                loaders: ['awesome-typescript-loader', 'angular2-template-loader','angular2-router-loader?loader=system&genDir=src/compiled/src/app']
             },
             {
                 test: /\.html$/,
@@ -31,7 +32,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: helpers.root('src', 'app'),
-                loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
             },
             {
                 test: /\.css$/,
@@ -47,6 +48,10 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        })
+        }),
+        new webpack.ContextReplacementPlugin(
+            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+            helpers.root('src')
+        )
     ]
 };
