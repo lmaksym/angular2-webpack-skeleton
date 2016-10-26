@@ -14,12 +14,11 @@ module.exports = {
     resolve: {
         extensions: ['.ts','.js']
     },
-    // context: path.resolve(__dirname, '../src/'),
     module: {
         loaders: [
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader','angular2-router-loader?loader=system&genDir=src/compiled/src/app']
+                loaders: ['awesome-typescript-loader', 'angular2-template-loader','angular2-router-loader']
             },
             {
                 test: /\.html$/,
