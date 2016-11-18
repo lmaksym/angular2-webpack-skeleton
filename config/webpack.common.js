@@ -12,7 +12,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts','.js']
+        extensions: ['.ts','.js', '.json', '.css', '.scss', '.html']
     },
     module: {
         loaders: [
@@ -29,13 +29,12 @@ module.exports = {
                 loader: 'file?name=assets/[name].[hash].[ext]'
             },
             {
-                test: /\.css$/,
-                exclude: helpers.root('src', 'app'),
-                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+                test: /\.(sass|scss)$/,
+                // exclude: helpers.root('src', 'app'),
+                loaders: ['raw-loader', 'sass-loader?sourceMap']//loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['raw-loader','css-loader', 'sass-loader?sourceMap'] })
             },
             {
                 test: /\.css$/,
-                include: helpers.root('src', 'app'),
                 loader: 'raw'
             }
         ]
