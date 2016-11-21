@@ -4,7 +4,10 @@ import {Component} from '@angular/core';
     selector: 'app-feature-b',
     template: `
 <h1>{{feature}}</h1>
-`
+`,
+    styles:[`h1{
+font-size: 25pt;
+}`]
 })
 
 export class FeatureBComponent {

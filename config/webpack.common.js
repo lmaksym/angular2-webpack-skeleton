@@ -1,8 +1,8 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var helpers = require('./helpers');
-const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const helpers = require('./helpers');
+
 
 module.exports = {
     entry: {
@@ -30,11 +30,22 @@ module.exports = {
             },
             {
                 test: /\.(sass|scss)$/,
-                // exclude: helpers.root('src', 'app'),
-                loaders: ['raw-loader', 'sass-loader?sourceMap']//loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['raw-loader','css-loader', 'sass-loader?sourceMap'] })
+                exclude: helpers.root('src', 'app'),
+                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css-loader', 'sass-loader?sourceMap'] })
+            },
+            {
+                test: /\.(sass|scss)$/,
+                include: helpers.root('src', 'app'),
+                loaders: ['raw-loader', 'sass-loader?sourceMap']
             },
             {
                 test: /\.css$/,
+                exclude: helpers.root('src', 'app'),
+                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader',loader: 'css?sourceMap'})
+            },
+            {
+                test: /\.css$/,
+                include: helpers.root('src', 'app'),
                 loader: 'raw'
             }
         ]
