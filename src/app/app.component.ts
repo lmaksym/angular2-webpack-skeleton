@@ -1,9 +1,8 @@
-import {Component} from "@angular/core";
+import {Component} from '@angular/core';
 @Component({
-    selector: 'app-root',
+    selector: 'sk-app-root',
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
-    private title:string = 'app works';
 }

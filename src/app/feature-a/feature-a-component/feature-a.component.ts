@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
-// import './feature-a.components';
+
 @Component({
-    selector: 'app-feature-a',
+    selector: 'sk-feature-a',
     template: `
 <h1>{{feature}}</h1>
 `,
-    styleUrls:['./feature-a.components']
+    styleUrls: ['./feature-a.components']
 })
 
 export class FeatureAComponent {
