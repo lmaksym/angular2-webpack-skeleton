@@ -12,7 +12,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts','.js', '.json', '.css', '.scss', '.html']
+        extensions: ['.ts','.js']
     },
     module: {
         loaders: [

@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
     template: `
 <h1>{{feature}}</h1>
 `,
-    styleUrls: ['./feature-a.components']
+    styleUrls: ['./feature-a.component.scss']
 })
 
 export class FeatureAComponent {
