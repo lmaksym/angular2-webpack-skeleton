@@ -11,7 +11,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+                loaders: ['awesome-typescript-loader', 'angular2-template-loader','angular2-router-loader']
             },
             {
                 test: /\.html$/,
@@ -31,7 +31,17 @@ module.exports = {
                 test: /\.css$/,
                 include: helpers.root('src', 'app'),
                 loader: 'raw'
-            }
+            },
+            {
+                test: /\.(sass|scss)$/,
+                exclude: helpers.root('src', 'app'),
+                loader: 'null'
+            },
+            {
+                test: /\.(sass|scss)$/,
+                include: helpers.root('src', 'app'),
+                loaders: ['raw-loader', 'sass-loader?sourceMap']
+            },
         ]
     }
 }

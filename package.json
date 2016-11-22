@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --inline --port 8081",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "pree2e": "webdriver-manager update -- --standalone",
+    "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
   "dependencies": {
@@ -50,6 +50,7 @@
     "lite-server": "^2.2.2",
     "node-sass": "^3.13.0",
     "null-loader": "^0.1.1",
+    "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "^2.1.7",
     "protractor": "^4.0.11",
     "raw-loader": "^0.5.1",

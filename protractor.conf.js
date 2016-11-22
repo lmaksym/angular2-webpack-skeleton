@@ -10,9 +10,11 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'phantomjs',
+    'phantomjs.binary.path': require('phantomjs-prebuilt').path
+    
   },
-  directConnect: true,
+  // directConnect: true,
   baseUrl: 'http://localhost:8081/',
   framework: 'jasmine',
   jasmineNodeOpts: {
