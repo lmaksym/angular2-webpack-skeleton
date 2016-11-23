@@ -69,6 +69,6 @@
     "webpack-dev-server": "2.1.0-beta.4",
     "webpack-merge": "^0.14.0"
   },
-  "author": "",
+  "author": "Maksym Lypivskyi",
   "license": "ISC"
 }
