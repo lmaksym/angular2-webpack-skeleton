@@ -15,6 +15,7 @@ module.exports = {
         extensions: ['.ts','.js']
     },
     module: {
+        // preLoaders: [{ test: /\.ts$/, loader: 'tslint-loader', include: helpers.root('src', 'app') }],
         loaders: [
             {
                 test: /\.ts$/,

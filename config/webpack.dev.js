@@ -7,8 +7,6 @@ module.exports = webpackMerge(commonConfig, {
     devtool: 'source-map',
 
     output: {
-        path: helpers.root('dist'),
-        publicPath: '/',
         filename: '[name].js',
         chunkFilename: '[id].chunk.js'
     },
@@ -19,6 +17,8 @@ module.exports = webpackMerge(commonConfig, {
 
     devServer: {
         historyApiFallback: true,
-        stats: 'minimal'
+        inline: true,
+        host: '0.0.0.0',
+        port: 3030
     }
 });
