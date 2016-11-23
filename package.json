@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "lint": "tslint \"src/**/*.ts\"",
-    "start": "webpack-dev-server",
+    "start:dev": "webpack-dev-server",
     "test": "karma start",
-    "build": "rimraf public && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "build:prod": "rimraf public && webpack --config config/webpack.prod.js --progress --profile --bail",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "serve": "lite-server",
+    "start:prod": "npm run build:prod & lite-server",
     "doc": "typedoc"
   },
   "dependencies": {
