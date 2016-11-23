@@ -1,6 +1,6 @@
 {
   "mode": "modules",
-  "out": "doc",
+  "out": "../doc",
   "theme": "default",
   "ignoreCompilerErrors": "true",
   "experimentalDecorators": "true",
@@ -12,5 +12,6 @@
   "suppressExcessPropertyErrors": "true",
   "suppressImplicitAnyIndexErrors": "true",
   "module": "commonjs",
-  "exclude": "**/node_modules/**/*.*"
+  "exclude": "**/node_modules/**/*.*",
+  "hideGenerator":"true"
 }

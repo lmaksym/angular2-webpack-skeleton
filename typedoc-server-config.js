@@ -1,7 +1,7 @@
 module.exports = {
-    port: 3030,
+    port: 8001,
     server: {
-        baseDir: './public',
+        baseDir: './doc',
         middleware: {
             1: require('connect-history-api-fallback')({index: '/index.html', verbose: true})
         }
