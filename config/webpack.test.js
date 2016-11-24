@@ -8,7 +8,8 @@ module.exports = {
     },
 
     module: {
-        loaders: [
+        rules: [
+
             {
                 test: /\.ts$/,
                 loaders: ['awesome-typescript-loader', 'angular2-template-loader','angular2-router-loader']
@@ -41,7 +42,7 @@ module.exports = {
                 test: /\.(sass|scss)$/,
                 include: helpers.root('src', 'app'),
                 loaders: ['raw-loader', 'sass-loader?sourceMap']
-            },
+            }
         ]
     }
-}
+};
