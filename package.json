@@ -1,7 +1,15 @@
 {
   "name": "angular2-webpack-skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "A boilerplate for quick start with Angular 2 and Webpack",
+  "keywords": [
+    "angular2",
+    "webpack",
+    "typescript",
+    "sass",
+    "jasmine",
+    "protractor"
+  ],
   "main": "index.js",
   "scripts": {
     "lint": "tslint \"src/**/*.ts\"",
@@ -63,7 +71,7 @@
     "tslint": "^3.15.1",
     "typedoc": "^0.5.1",
     "typedoc-webpack-plugin": "^1.1.3",
-    "typescript": "^2.0.3",
+    "typescript": "2.0.3",
     "typings": "^1.4.0",
     "webpack": "2.1.0-beta.25",
     "webpack-dev-server": "2.1.0-beta.4",
