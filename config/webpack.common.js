@@ -16,14 +16,14 @@ module.exports = {
     },
     module: {
         // preLoaders: [{ test: /\.ts$/, loader: 'tslint-loader', include: helpers.root('src', 'app') }],
-        loaders: [
+        rules: [
             {
                 test: /\.ts$/,
                 loaders: ['awesome-typescript-loader', 'angular2-template-loader','angular2-router-loader']
             },
             {
                 test: /\.html$/,
-                loader: 'html'
+                loader: 'html-loader'
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -47,7 +47,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 include: helpers.root('src', 'app'),
-                loader: 'raw'
+                loader: 'raw-loader'
             }
         ]
     },
